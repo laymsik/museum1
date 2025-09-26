@@ -68,6 +68,8 @@ enableEditMode() {
         this.hotspots = [];
         
         this.init();
+        this.preloadedTextures = {}; // Хранилище предзагруженных текстур
+        this.isPreloading = false;
     }
     
     init() {
@@ -81,6 +83,7 @@ enableEditMode() {
         
         this.showLoading('Загрузка музея...');
     }
+
     
     createScene() {
         this.scene = new THREE.Scene();
@@ -133,7 +136,7 @@ enableEditMode() {
     loadPanoramas() {
         this.panoramas = {
             'hall1': {
-                image: 'hall1.jpg',
+                image: 'https://ik.imagekit.io/fmeayodwe/hall1.jpg?updatedAt=1758908598334',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -145,7 +148,7 @@ enableEditMode() {
                 ]
             },
             'hall2': {
-                image: 'hall2.jpg',
+                image: 'https://ik.imagekit.io/fmeayodwe/hall2.jpg?updatedAt=1758908598731',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -163,7 +166,7 @@ enableEditMode() {
                 ]
             },
             'hall3': {
-                image: 'hall3.jpg',
+                image: 'https://ik.imagekit.io/fmeayodwe/hall3.jpg?updatedAt=1758908598574',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -181,7 +184,7 @@ enableEditMode() {
                 ]
             },
             'hall4': {
-                image: 'hall4.jpg',
+                image: 'https://ik.imagekit.io/fmeayodwe/hall4.jpg?updatedAt=1758908598510',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -199,7 +202,7 @@ enableEditMode() {
                 ]
             },
             'hall5': {
-                image: 'hall5.jpg',
+                image: 'https://ik.imagekit.io/fmeayodwe/hall5.jpg?updatedAt=1758908598732',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -488,5 +491,4 @@ updateAllHotspots() {
 // Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     new VirtualMuseum();
-
 });

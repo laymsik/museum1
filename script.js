@@ -133,7 +133,7 @@ enableEditMode() {
     loadPanoramas() {
         this.panoramas = {
             'hall1': {
-                image: '/hall1.jpg',
+                image: 'hall1.jpg',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -145,7 +145,7 @@ enableEditMode() {
                 ]
             },
             'hall2': {
-                image: '/hall2.jpg',
+                image: 'hall2.jpg',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -163,7 +163,7 @@ enableEditMode() {
                 ]
             },
             'hall3': {
-                image: '/hall3.jpg',
+                image: 'hall3.jpg',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -181,7 +181,7 @@ enableEditMode() {
                 ]
             },
             'hall4': {
-                image: '/hall4.jpg',
+                image: 'hall4.jpg',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -199,7 +199,7 @@ enableEditMode() {
                 ]
             },
             'hall5': {
-                image: '/hall5.jpg',
+                image: 'hall5.jpg',
                 title: 'Музей КФ РГУ СоцТех',
                 hotspots: [
                     { 
@@ -488,4 +488,5 @@ updateAllHotspots() {
 // Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     new VirtualMuseum();
+
 });

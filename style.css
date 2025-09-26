@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: #000;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#controls button {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Удаляем старые стили .hotspot и добавляем новые */
+
+.floor-hotspot {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    /* УБИРАЕМ transition - никаких анимаций! */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #2c5aa0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    opacity: 1 !important;
+}
+
+.floor-hotspot:hover {
+    transform: scale(1.2);
+    background: #2c5aa0;
+    border-color: white;
+    /* Только быстрая анимация наведения */
+    transition: all 0.1s ease-out;
+}
+
+.hotspot-tooltip {
+    transition: opacity 0.1s ease-out; /* Быстрая подсказка */
+}
+
+.floor-hotspot::before {
+    font-size: 20px;
+    filter: brightness(0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.floor-hotspot.turn-forward::before { content: '⬆️'; }
+.floor-hotspot.turn-left::before { content: '⬅️'; }
+.floor-hotspot.turn-right::before { content: '➡️'; }
+.floor-hotspot.turn-back::before { content: '⬇️'; }
+
+.floor-hotspot:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hotspot-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+.floor-hotspot:hover .hotspot-tooltip {
+    opacity: 1;
+}
